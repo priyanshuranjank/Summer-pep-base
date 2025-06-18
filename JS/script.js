@@ -44,8 +44,96 @@ function get(){
 
   get();
 
+  // scopes
   // hoisting
   // closure
   // func $ types
   // callback
+
+// hoisting
+console.log(a);
+
+const a = 'lpu'
+
+get();
+
+function get(){
+  var a = "lpu"
+  console.log(a);
   
+}
+
+//data types  - primitive data type store in stack memory
+ var a = 5;
+ var b = a;
+ console.log(a, b);
+
+     //reference - store in heap memory
+  let obj1 = {
+    a: 1,
+    b: 2
+  }
+  let obj2 = obj1;
+
+  console.log(obj1);
+  console.log(obj2);
+
+  obj1.a = 10;
+  obj2.b = 20;
+
+  console.log(obj1);
+  console.log(obj2);
+  
+  //NOTE - Operators:
+
+/*
+1. Arithematic Operator
+
++, -, *, /, //, %
+
+2. Comparision Operator
+
+>, <, ==, ===, !=
+
+3. Assignment Operator
+=, +=, -=, *=, /=
+
+4. Ternary Operator
+
+expression ? statement: statement
+
+5. Logical Operator
+&&, ||, !, ?? 
+
+6. Bitwise Operator
+
+&, |, ^
+
+7. typeof Operator
+
+typeof
+
+*/
+
+let a = 3;
+let b = "3";
+
+console.log(a == b);
+console.log(a === b);
+
+console.log((a += 3)); //a = a+3
+
+console.log(a > 3 ? "Hello" : "Hi");
+
+a = null;
+
+console.log(a ?? "hello");
+
+console.log(typeof b);
+
+// DOM concepts
+
+
+
+
+
