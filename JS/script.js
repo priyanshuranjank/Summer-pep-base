@@ -134,6 +134,37 @@ console.log(typeof b);
 // DOM concepts
 
 
+// get element by Id
+document.getElementById("ID_name");
 
+//get element by class name
+document.getElementsByClassName("tag_name")
+
+//get element by tag name
+document.getElementsByTagName('p');
+
+//get element by name
+document.getElementsByName("name_of_the_name")  // for input or forms
+
+//query selector( returns only the first parsed element)
+
+document.querySelector("#fpara")
+document.querySelector(".text_para")
+
+// for all
+
+document.querySelectorAll("#fpara");
+
+
+// ------------------>   // UPDATE EXISTING ELEMENTS
+
+// Events and Listeners
+
+monitorEvents(document);
+unmonitorEvents(document);
+
+// syntax of event Listner
+
+<event-target>.addEventListner(<event-type>, function->action)
 
 
