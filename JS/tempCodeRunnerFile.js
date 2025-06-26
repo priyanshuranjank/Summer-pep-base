@@ -1,7 +1,31 @@
-console.log("hello world");
 
-setTimeout( function(){
-  console.log("hello lpu"); 
-},5000)
+function login(cb) {
+  console.log("User Logged in");
+  // cb();
+}
 
-console.log("jai shree ram");
+function addItemToCart(cb) {
+  console.log("Added items to cart");
+  cb();
+}
+
+function createOrder(cb) {
+  console.log("order creation");
+  cb();
+}
+
+function payOrder(cb) {
+  console.log("Payment Done..");
+  cb();
+}
+
+function createOrderSummary(cb) {
+  console.log("Created Order Summary");
+  cb();
+}
+
+function updateWallet() {
+  console.log("Update wallet");
+}
+
+login(()=>addItemToCart(()=>createOrder(()=>payOrder(()=>createOrderSummary(()=>updateWallet())))));

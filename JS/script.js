@@ -176,3 +176,202 @@ setTimeout( function(){
 
 console.log("jai shree ram");
 
+//callback - when you pass function as argument
+
+function createOrder(cb) {
+  console.log("order creation");
+  cb();
+}
+
+function payOrder(cb) {
+  console.log("payment done...");
+  cb();
+}
+
+function createOrderSummary() {
+  console.log("created order summary");
+}
+
+createOrder(() => payOrder(() => createOrderSummary()));
+//    Bad side of call back
+/*
+01. call back inversion
+02. Inversion of control
+*/
+
+// Callback Hell
+/*
+01. User login
+02. Add items in cart
+03. Create order
+04. Pay order
+05. Create order summary
+06. Update wallet
+*/
+
+function login(cb) {
+  console.log("User Logged in");
+  cb();
+}
+
+function addItemToCart(cb) {
+  console.log("Added items to cart");
+  cb();
+}
+
+function createOrder(cb) {
+  console.log("order creation");
+  cb();
+}
+
+function payOrder(cb) {
+  console.log("Payment Done..");
+  cb();
+}
+
+function createOrderSummary(cb) {
+  console.log("Created Order Summary");
+  cb();
+}
+
+function updateWallet() {
+  console.log("Update wallet");
+}
+
+login(()=>addItemToCart(()=>createOrder(()=>payOrder(()=>createOrderSummary(()=>updateWallet())))));
+// this is a good exmpale of callback hell
+
+
+//promise
+
+/NOTE - Promises
+
+//Defination
+// Promise is an object which stores eventual completion or failure
+//  of an asynchronous code
+
+// function createOrder() {
+//   console.log("Order created successfully!");
+// }
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     createOrder();
+//     resolve();
+//   }, 2000);
+// });
+
+// console.log(promise);
+
+//LINK - Callback hell via promise
+
+/*
+1. User Login
+2. Add items to cart
+3. Create Order
+4. Pay order
+5. Create Order summary
+6. Update wallet
+
+*/
+
+const login = new Promise((res, rej) => {
+  console.log("User Logged in");
+  res();
+});
+
+const addItemToCart = new Promise((res, rej) => {
+  console.log("Added items to cart");
+  res();
+});
+
+const createOrder = new Promise((res, rej) => {
+  console.log("Order creation");
+  res();
+});
+
+const payOrder = new Promise((res, rej) => {
+  console.log("Payment Done..");
+  res();
+});
+const createOrderSummary = new Promise((res, rej) => {
+  console.log("Created Order Summary");
+  res();
+});
+
+function updateWallet() {
+  console.log("Update wallet");
+}
+
+login.then(() => {
+  addItemToCart.then(() => {
+    createOrder.then(() => {
+      payOrder.then(() => {
+        createOrderSummary.then(() => {
+          updateWallet();
+        });
+      });
+    });
+  });
+});
+
+//
+//NOTE - Async Await
+
+/*
+1. User Login
+2. Add items to cart
+3. Create Order
+4. Pay order
+5. Create Order summary
+6. Update wallet
+
+*/
+
+const login = () =>
+  new Promise((res, rej) => {
+    console.log("User Logged in");
+    res({ name: "sriram" });
+  });
+
+const addItemToCart = () =>
+  new Promise((res, rej) => {
+    console.log("Added items to cart");
+    rej("Failed to add item in cart!");
+  });
+
+const createOrder = () =>
+  new Promise((res, rej) => {
+    console.log("Order creation");
+    res();
+  });
+
+const payOrder = () =>
+  new Promise((res, rej) => {
+    console.log("Payment Done..");
+    res();
+  });
+const createOrderSummary = () =>
+  new Promise((res, rej) => {
+    console.log("Created Order Summary");
+    res();
+  });
+
+function updateWallet() {
+  console.log("Update wallet");
+}
+
+async function userBehaviour() {
+  try {
+    await login();
+    await addItemToCart();
+    await createOrder();
+    await payOrder();
+    await createOrderSummary();
+    updateWallet();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+userBehaviour();
