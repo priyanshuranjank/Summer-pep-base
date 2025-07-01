@@ -2,12 +2,18 @@ import "./App.css";
 import React from "react";
 import Counter from "./components/Counter"; 
 import Timer from "./components/Timer"; 
+import Conditional from "./components/Conditional"; 
+import Form from "./components/Form";
+import List from "./components/List"
 
 function App() {
   return (
     <div className="App">
-      <Counter />  
-      <Timer/>
+      {/* <Counter />  
+      <Timer/> */}
+      <Conditional />
+      <Form/>
+      <List/>
     </div>
   );
 }
