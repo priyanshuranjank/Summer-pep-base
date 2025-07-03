@@ -9,18 +9,25 @@ import List from "./components/List"
 import TimerWithEffect from "./components/TimerWithEffect";
 import  CountdownTimer from "./components/CountDownTimer";
 import CheatingDetect from "./components/CheatingDetect";
+import Draft from "./components/Draft";
+import Memocomp from "./components/Memocomp";
+import CallbackMemo from "./components/CallbackMemo";
 function App() {
   return (
     <div className="App">
       {/* <Counter />
       <Timer/> */}
-      <Conditional />
+      {/* <Conditional />
       <Form/>
       <List/>
       <UserSearch />
       <TimerWithEffect />
       < CountdownTimer />
-      <CheatingDetect />
+      <CheatingDetect /> */}
+      {/* <Draft />
+      <Memocomp /> */}
+
+      <CallbackMemo />
     </div>
   );
 }
