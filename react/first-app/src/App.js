@@ -12,6 +12,12 @@ import CheatingDetect from "./components/CheatingDetect";
 import Draft from "./components/Draft";
 import Memocomp from "./components/Memocomp";
 import CallbackMemo from "./components/CallbackMemo";
+import RedCounter from "./components/RedCounter";
+import MultiRedCounter from "./components/MultiRedCounter";
+import useCounter from "./components/useCounter";
+import Parent from "./components/Parent";
+import Products from "./components/Products";
+
 function App() {
   return (
     <div className="App">
@@ -26,8 +32,14 @@ function App() {
       <CheatingDetect /> */}
       {/* <Draft />
       <Memocomp /> */}
+      {/* <CallbackMemo />
+      <RedCounter />
+      <MultiRedCounter /> */}
 
-      <CallbackMemo />
+     {/* <Parent /> */}
+     {/* <Parent2 />
+      */}
+      <Products />
     </div>
   );
 }
