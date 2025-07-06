@@ -17,6 +17,7 @@ import MultiRedCounter from "./components/MultiRedCounter";
 import useCounter from "./components/useCounter";
 import Parent from "./components/Parent";
 import Products from "./components/Products";
+import InternetConnection from "./components/InternetConnection";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
      {/* <Parent2 />
       */}
       <Products />
+      <InternetConnection />
     </div>
   );
 }
