@@ -18,11 +18,12 @@
 //rendering virtual dom
 
 
-
-const { default: mongoose } = require("mongoose");
 const User = require("../models/user.models");
 
 function getUser(req, res) {
+  res.status(200).send("This is a user router");
+}
+function getAllUser(req, res) {
   res.status(200).send("This is a user router");
 }
 async function createUser(req, res) {
@@ -37,5 +38,4 @@ async function createUser(req, res) {
   res.status(200).send("This is a user post router");
 }
 
-module.exports = { getUser, createUser };
-
+module.exports = { getUser, getAllUser, createUser };
